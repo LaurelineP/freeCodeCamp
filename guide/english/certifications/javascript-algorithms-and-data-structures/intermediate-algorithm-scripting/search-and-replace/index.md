@@ -216,6 +216,42 @@ myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 ```
 
 
+---
+
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution Alternative 3:
+### Solution involving:
+* regExp
+* ternary condition
+* replace method
+
+### Code Explanation:
+* Check if the old word's ( **before** ) first letter is a capita or not with **regExp** and **ternary** condition:
+   *  if yes : replace the new word's ( **after** ) first letter with a capital, add this to the rest and return it
+   *  if no  : return the new word ( **after** ) as it is.
+   
+* Replace old word ( **before** ) with new word ( **after** ) with **replace** method */
+
+
+```javascript
+function myReplace(str, before, after ) {
+
+  /* Capital or not change first letter or left the word as it is */
+  const newStr = /^[A-Z]/.test( before[0] )
+    ? `${ after.substring( 0, 1 ).toUpperCase()}${ after.substring( 1 ) }`
+    : after;
+
+  /* Replace previous word by new word && return it */
+  return str.replace( before, newStr );
+}
+
+myReplace("Let us get back to more Coding", "Coding", "algorithms")
+```
+
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/@LaurelineP/Search-and-replace-algorithm' target='_blank' rel='nofollow'>Run Code</a>
+
+
+---
+
 
 #### Relevant Links
 
